@@ -50,4 +50,4 @@ stages:
       displayName: "Run trivy scan"
       inputs:
         script: |
-          trivy image $(dockerRegistryServiceConnection)
+          trivy image $(imageRepository)
