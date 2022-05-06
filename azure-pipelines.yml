@@ -14,7 +14,7 @@ variables:
   imageRepository: 'ashanruwanpathiranadockertrivy'
   containerRegistry: 'trivy.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '$(Build.BuildId)'
+  tag: 'dev'
   trivyVersion: 0.9.1
 
   # Agent VM image name
@@ -37,7 +37,7 @@ stages:
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          dev
+          $(tag)
     
     - script: |
         sudo apt-get install rpm
@@ -59,4 +59,4 @@ stages:
         repository: $(imageRepository)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          dev
+          $(tag)
