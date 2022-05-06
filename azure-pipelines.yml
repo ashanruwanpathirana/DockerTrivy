@@ -14,7 +14,7 @@ variables:
   imageRepository: 'DockerTrivyImages'
   containerRegistry: 'trivy.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: 'Image-$(Build.BuildId)'
+  tag: '$(Build.BuildId)'
   trivyVersion: 0.9.1
 
   # Agent VM image name
