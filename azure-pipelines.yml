@@ -51,4 +51,5 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         repository: '$(imageRepository)'
         command: 'push'
-        tags: '$(tag)'
+        tags: |
+          $(tag)
