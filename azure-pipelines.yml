@@ -11,10 +11,10 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'b7cd49c6-e963-4761-bf2d-dfcd2be94f63'
-  imageRepository: 'ashanruwanpathiranadockertrivy'
+  imageRepository: 'DockerTrivyImages'
   containerRegistry: 'trivy.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '$(Build.BuildId)'
+  tag: 'Image-$(Build.BuildId)'
   trivyVersion: 0.9.1
 
   # Agent VM image name
