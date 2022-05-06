@@ -46,10 +46,4 @@ stages:
         script: |
           trivy image $(containerRegistry)/$(imageRepository):$(tag)
     
-    - task: Docker@2
-      inputs:
-        containerRegistry: $(containerRegistry)
-        repository: '$(imageRepository)'
-        command: 'push'
-        tags: |
-          $(tag)
+    
