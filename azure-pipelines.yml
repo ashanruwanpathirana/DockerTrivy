@@ -37,7 +37,7 @@ stages:
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          $(tag)
+          dev
     
     - script: |
         sudo apt-get install rpm
@@ -59,4 +59,4 @@ stages:
         repository: $(imageRepository)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          $(tag)
+          dev
