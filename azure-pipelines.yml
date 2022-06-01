@@ -52,11 +52,4 @@ stages:
         script: |
           trivy image $(containerRegistry)/$(imageRepository):$(tag)
 
-    - task: Docker@2
-      displayName: push an image to container registry
-      inputs:
-        command: Push
-        repository: $(imageRepository)
-        containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+    
