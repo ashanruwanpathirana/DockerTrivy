@@ -51,7 +51,7 @@ stages:
       inputs:
         script: |
           trivy image $(containerRegistry)/$(imageRepository):$(tag) > vulReport.txt
-          Cat vulReport.txt
+        
         
 
     
