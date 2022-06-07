@@ -10,9 +10,9 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'b7cd49c6-e963-4761-bf2d-dfcd2be94f63'
-  imageRepository: 'ashanruwanpathiranadockertrivy'
-  containerRegistry: 'trivy.azurecr.io'
+  dockerRegistryServiceConnection: '854fc6cb-0b6f-4230-b2e4-2c2990d3b249'
+  imageRepository: 'scan'
+  containerRegistry: 'anchortestconreg.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: 'dev'
   trivyVersion: 0.9.1
