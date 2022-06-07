@@ -50,7 +50,8 @@ stages:
       displayName: "Run trivy scan"
       inputs:
         script: |
-          trivy image $(containerRegistry)/$(imageRepository):$(tag) > vul.txt
+          trivy image $(containerRegistry)/$(imageRepository):$(tag) > vulReport.txt
+          Cat vulReport.txt
         
 
     
