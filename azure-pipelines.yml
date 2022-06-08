@@ -64,4 +64,4 @@ stages:
           azureSubscription: 'Enadoc Development(3c07cfff-5d13-481e-855c-11ffd7d3d8d7)'
           Destination: 'AzureBlob'
           storage: 'eviasrereport'
-          ContainerName: 'trivy'
+          
