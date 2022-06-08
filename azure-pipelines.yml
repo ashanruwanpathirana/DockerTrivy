@@ -57,7 +57,11 @@ stages:
           ps2pdf file.ps TrivyVulReport.pdf
           rm vulReport.txt
           rm file.ps
-
-        
-
     
+    - task: AzureFileCopy@4
+      inputs:
+          SourcePath: '*/TrivyVulReport.pdf'
+          azureSubscription: 'Enadoc Development(3c07cfff-5d13-481e-855c-11ffd7d3d8d7)'
+          Destination: 'AzureBlob'
+          storage: 'eviasrereport'
+          ContainerName: 'trivy'
