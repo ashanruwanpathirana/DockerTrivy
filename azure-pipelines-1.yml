@@ -50,10 +50,4 @@ stages:
       displayName: "Run trivy scan"
       inputs:
         script: |
-          trivy image $(containerRegistry)/$(imageRepository):$(tag) > vulReport.txt
-          cat vulReport.txt
-          sudo apt-get install -y enscript
-          enscript -p file.ps vulReport.txt
-          ps2pdf file.ps TrivyVulReport.pdf
-          rm vulReport.txt
-          rm file.ps
+          trivy image $(containerRegistry)/$(imageRepository):$(tag)
