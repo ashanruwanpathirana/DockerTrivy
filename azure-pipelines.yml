@@ -58,10 +58,16 @@ stages:
           rm vulReport.txt
           rm file.ps
     
-    - task: AzureFileCopy@4
+    - task: CopyFiles@2
       inputs:
-          SourcePath: '*/TrivyVulReport.pdf'
-          azureSubscription: 'Enadoc Development(3c07cfff-5d13-481e-855c-11ffd7d3d8d7)'
-          Destination: 'AzureBlob'
-          storage: 'eviasrereport'
+        SourceFolder: '$(agent.builddirectory)'
+        Contents: 'TrivyVulReport.pdf'
+        TargetFolder: '$(build.artifactstagingdirectory)'
+        OverWrite: true
           
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'trivy'
+        publishLocation: 'Container'
+        StoreAsTar: true      
