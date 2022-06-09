@@ -15,7 +15,7 @@ variables:
   containerRegistry: 'anchortestconreg.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: 'dev'
-  trivyVersion: 0.28.1
+  trivyVersion: 0.9.1
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
