@@ -52,16 +52,12 @@ stages:
         script: |
           trivy image $(containerRegistry)/$(imageRepository):$(tag) > vulReport.txt
           cat vulReport.txt
-          sudo apt-get install -y enscript
-          enscript -p file.ps vulReport.txt
-          ps2pdf file.ps TrivyVulReport.pdf
-          rm vulReport.txt
-          rm file.ps
+          
     
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(agent.builddirectory)'
-        Contents: 'TrivyVulReport.pdf'
+        Contents: 'vulReport.txt'
         TargetFolder: '$(build.artifactstagingdirectory)'
         OverWrite: true
           
