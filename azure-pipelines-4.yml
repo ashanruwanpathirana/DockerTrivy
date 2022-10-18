@@ -52,7 +52,7 @@ stages:
           script: |
               trivy image $(containerRegistry)/$(imageRepository):$(tag)
  
-- stage: Approval Stage
+- stage: approvalstage
   displayName: Approval Stage
   dependsOn: Build
   jobs:
