@@ -62,7 +62,7 @@ stages:
                            inputs:
                             script: |
                               trivy image $(containerRegistry)/$(imageRepository):$(tag)
-              - 
+            
     
 
             
